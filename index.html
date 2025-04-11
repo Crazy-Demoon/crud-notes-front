@@ -2,12 +2,24 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Inicio</title>
+  <title>Notas</title>
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
-  <h1>Bienvenido a la App de Notas</h1>
-  <a href="notes.html">Ver Notas</a>
+  <h1>Notas</h1>
+  <a href="create.html">+ Nueva Nota</a>
+  <div id="message"></div>
+  <table>
+    <thead>
+      <tr>
+        <th>Título</th>
+        <th>Contenido</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody id="notes-list"></tbody>
+  </table>
+
+  <script type="module" src="js/main.js"></script>
 </body>
 </html>

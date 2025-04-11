@@ -1,11 +1,20 @@
 import { createNote } from './api.js';
 
-document.getElementById('create-form').addEventListener('submit', async (e) => {
+const form = document.getElementById('note-form');
+const messageDiv = document.getElementById('message');
+
+form.addEventListener('submit', async (e) => {
   e.preventDefault();
-  const note = {
+
+  const newNote = {
     title: document.getElementById('title').value,
-    content: document.getElementById('content').value
+    content: document.getElementById('content').value,
   };
-  await createNote(note);
-  window.location.href = 'notes.html';
+
+  try {
+    await createNote(newNote);
+    window.location.href = 'index.html';
+  } catch (err) {
+    messageDiv.textContent = 'Error al crear la nota.';
+  }
 });
